@@ -1,0 +1,234 @@
+/* Загальні стилі */
+:root {
+    --primary-color: #0057b7;
+    --secondary-color: #ffd700;
+    --dark-color: #333;
+    --light-color: #f8f9fa;
+    --gray-color: #6c757d;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--light-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Шапка */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Навігація */
+.navigation {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.navigation li {
+    margin: 0 1.5rem;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navigation a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Основна частина */
+.main-content {
+    padding: 3rem 0;
+}
+
+.section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--secondary-color);
+    margin: 0.5rem auto;
+}
+
+/* Розділ 1: Текст із великим зображенням */
+.section-1 article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.featured-image {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.featured-image:hover {
+    transform: scale(1.02);
+}
+
+.section-1 .content {
+    max-width: 800px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Розділ 2: Галерея зображень */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-item {
+    flex: 1 1 300px;
+    max-width: 350px;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Розділ 3: Відео */
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.video-item {
+    flex: 1 1 350px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.video-item video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.video-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Підвал */
+.footer {
+    background: linear-gradient(135deg, #0057b7 0%, #003b80 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.footer h3 {
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+}
+
+.footer p {
+    margin: 0.3rem 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+
+    .container ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navigation li {
+        margin: 0.5rem 0;
+    }
+    
+    .gallery-item {
+        flex: 1 1 100%;
+    }
+    
+    .video-item {
+        flex: 1 1 100%;
+    }
+}
